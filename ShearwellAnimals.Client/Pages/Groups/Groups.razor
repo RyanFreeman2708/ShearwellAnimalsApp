@@ -1,0 +1,27 @@
+﻿@page "/groups"
+@inherits GroupsBase
+
+<h3>Groups</h3>
+
+@if (Groups == null)
+{
+    <h3>Loading...</h3>
+}
+else
+{
+    var groupCount = Groups.Count();
+
+    @if (groupCount > 0)
+    {
+        @foreach (var group in Groups)
+        {
+            <h2>@group.Name</h2>
+            <p>@group.DateCreated</p>
+        }
+    }
+}
+
+
+@code {
+
+}
